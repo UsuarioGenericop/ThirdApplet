@@ -336,6 +336,40 @@ formatter.setMinimum(0.0);
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+      try {
+        java.util.Locale localeCO = new java.util.Locale("es", "CO");
+        java.text.DecimalFormatSymbols symbols = new java.text.DecimalFormatSymbols(localeCO);
+        symbols.setDecimalSeparator(',');
+        symbols.setGroupingSeparator('.');
+        java.text.DecimalFormat copFormat = new java.text.DecimalFormat("¤ #,##0.##", symbols);
+        copFormat.setCurrency(java.util.Currency.getInstance("COP"));
+
+        // Calculate first product
+        Number value1 = (Number) jFormattedTextField1.getValue();
+        int qty1 = ((Number) jFormattedTextField4.getValue()).intValue();
+        double total1 = value1.doubleValue() * qty1;
+        jTextField6.setText(copFormat.format(total1));
+
+        // Calculate second product
+        Number value2 = (Number) jFormattedTextField2.getValue();
+        int qty2 = ((Number) jFormattedTextField5.getValue()).intValue();
+        double total2 = value2.doubleValue() * qty2;
+        jTextField10.setText(copFormat.format(total2));
+
+        // Calculate third product
+        Number value3 = (Number) jFormattedTextField3.getValue();
+        int qty3 = ((Number) jFormattedTextField6.getValue()).intValue();
+        double total3 = value3.doubleValue() * qty3;
+        jTextField14.setText(copFormat.format(total3));
+
+        // Final total
+        double grandTotal = total1 + total2 + total3;
+        jTextField15.setText(copFormat.format(grandTotal));
+
+    } catch (Exception ex) {
+        jTextField15.setText("Error");
+        ex.printStackTrace();
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
