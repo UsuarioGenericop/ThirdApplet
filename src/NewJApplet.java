@@ -169,7 +169,7 @@ formatter.setMinimum(0.0);
         jPanel2.add(jFormattedTextField1);
 
         jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-        jFormattedTextField4.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jFormattedTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel2.add(jFormattedTextField4);
 
         jTextField6.setEditable(false);
@@ -191,7 +191,7 @@ formatter.setMinimum(0.0);
         jPanel2.add(jFormattedTextField2);
 
         jFormattedTextField5.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-        jFormattedTextField5.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jFormattedTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel2.add(jFormattedTextField5);
 
         jTextField10.setEditable(false);
@@ -213,7 +213,7 @@ formatter.setMinimum(0.0);
         jPanel2.add(jFormattedTextField3);
 
         jFormattedTextField6.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-        jFormattedTextField6.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        jFormattedTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel2.add(jFormattedTextField6);
 
         jTextField14.setEditable(false);
@@ -344,28 +344,27 @@ formatter.setMinimum(0.0);
         java.text.DecimalFormat copFormat = new java.text.DecimalFormat("¤ #,##0.##", symbols);
         copFormat.setCurrency(java.util.Currency.getInstance("COP"));
 
-        // Calculate first product
         Number value1 = (Number) jFormattedTextField1.getValue();
         int qty1 = ((Number) jFormattedTextField4.getValue()).intValue();
         double total1 = value1.doubleValue() * qty1;
         jTextField6.setText(copFormat.format(total1));
 
-        // Calculate second product
         Number value2 = (Number) jFormattedTextField2.getValue();
         int qty2 = ((Number) jFormattedTextField5.getValue()).intValue();
         double total2 = value2.doubleValue() * qty2;
         jTextField10.setText(copFormat.format(total2));
 
-        // Calculate third product
         Number value3 = (Number) jFormattedTextField3.getValue();
         int qty3 = ((Number) jFormattedTextField6.getValue()).intValue();
         double total3 = value3.doubleValue() * qty3;
         jTextField14.setText(copFormat.format(total3));
 
-        // Final total
         double grandTotal = total1 + total2 + total3;
         jTextField15.setText(copFormat.format(grandTotal));
 
+        String clientName = jTextField1.getText();
+        
+        jLabel8.setText(clientName + " El total de su compra es: " + "$"+grandTotal);
     } catch (Exception ex) {
         jTextField15.setText("Error");
         ex.printStackTrace();
