@@ -1,9 +1,9 @@
 import java.awt.Color;
 import javax.swing.*;
 
-public class NewJApplet extends javax.swing.JFrame {
+public class PurchaseInvoice extends javax.swing.JFrame {
 
-    public NewJApplet() {
+    public PurchaseInvoice() {
         initComponents();   
         init();        
         
@@ -68,7 +68,7 @@ formatter.setMinimum(0.0);
     // Main method → entry point to run in JDK 25
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            new NewJApplet().setVisible(true);
+            new PurchaseInvoice().setVisible(true);
         });
     }
         
