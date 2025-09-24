@@ -26,32 +26,43 @@ formatter.setValueClass(Double.class);
 formatter.setAllowsInvalid(true);   // <-- allow typing , and .
 formatter.setMinimum(0.0);
 
-// Assign formatter
-jFormattedTextField1.setFormatterFactory(
-    new javax.swing.text.DefaultFormatterFactory(formatter)
-);
-
-// Very important: commit on focus lost, not on every key
-jFormattedTextField1.setFocusLostBehavior(JFormattedTextField.COMMIT_OR_REVERT);
-
-// Default value
-jFormattedTextField1.setValue(0.0);
-
-
-     jFormattedTextField2.setFormatterFactory(
+  
+    jFormattedTextField1.setFormatterFactory(
         new javax.swing.text.DefaultFormatterFactory(formatter)
     );
-    
+
+
+    jFormattedTextField1.setFocusLostBehavior(JFormattedTextField.COMMIT_OR_REVERT);
+
+  
+    jFormattedTextField1.setValue(0.0);
+
+        
+    jFormattedTextField2.setFormatterFactory(
+        new javax.swing.text.DefaultFormatterFactory(formatter)
+    );
+
+
+    jFormattedTextField2.setFocusLostBehavior(JFormattedTextField.COMMIT_OR_REVERT);
+
+
     jFormattedTextField2.setValue(0.0);
-    
-     jFormattedTextField3.setFormatterFactory(
+
+
+       
+    jFormattedTextField3.setFormatterFactory(
         new javax.swing.text.DefaultFormatterFactory(formatter)
     );
-    
+
+ 
+    jFormattedTextField3.setFocusLostBehavior(JFormattedTextField.COMMIT_OR_REVERT);
+
+   
     jFormattedTextField3.setValue(0.0);
-    
-    
-    
+
+    jFormattedTextField4.setValue(0.0);
+    jFormattedTextField5.setValue(0.0);
+    jFormattedTextField6.setValue(0.0);
     }
     
     // Main method → entry point to run in JDK 25
