@@ -75,16 +75,16 @@ public class DayCalculator extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText("Segundos:");
+        jLabel4.setText("Minutos:");
         jPanel3.add(jLabel4);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("Segundos");
+        jLabel7.setText("Minutos");
         jPanel3.add(jLabel7);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel5.setText("Minutos:");
+        jLabel5.setText("Segundos:");
         jPanel3.add(jLabel5);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -154,6 +154,16 @@ public class DayCalculator extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Object spinner = jSpinner1.getValue();
+        
+        int number = ((Integer)spinner);
+        System.out.println(number);
+        jLabel6.setText("" + number * 24);
+        jLabel7.setText("" + number * 3600);
+        jLabel8.setText("" + number * 86400);
+        if (number == 1 || number == -1){
+        jLabel9.setText("" + number + " dia tiene " + jLabel6.getText() + " horas " + jLabel7.getText() + " minutos " + jLabel8.getText() + " segundos ");
+        }else {jLabel9.setText("" + number + " dias tienen " + jLabel6.getText() + " horas " + jLabel7.getText() + " minutos " + jLabel8.getText() + " segundos ");}
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
