@@ -159,7 +159,7 @@ public class DayCalculator extends javax.swing.JFrame {
         int number = ((Integer)spinner);
         System.out.println(number);
         jLabel6.setText("" + number * 24);
-        jLabel7.setText("" + number * 3600);
+        jLabel7.setText("" + number * 1440);
         jLabel8.setText("" + number * 86400);
         if (number == 1 || number == -1){
         jLabel9.setText("" + number + " dia tiene " + jLabel6.getText() + " horas " + jLabel7.getText() + " minutos " + jLabel8.getText() + " segundos ");
